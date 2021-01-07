@@ -1,0 +1,21 @@
+  <div align="center">
+    <h1 align='center'>Load game</h1>
+    <%= form_with scope: :load_form, url: loads_path, local: true do |f| %>
+      <table>
+        <tr>
+          <td align="center" colspan="3">
+            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: 'box'} %>
+		  </td>
+        </tr>
+          <tr>
+            <td colspan='2' align='center'>
+              <div style='margin: 5% 0 3%; font-size: 130%'><%= @warning %></div>
+            </td>
+          </tr>
+      </table>
+      <ul class="block">
+        <li><%= link_to 'Cancel', game_path %></li>
+        <li><%= f.submit :submit, class: 'button', value: "Submit" %></li>
+      </ul>
+    <% end %>
+</div>

@@ -1,0 +1,32 @@
+  <h1 align='center'>Your profile</h1>
+  <%= form_with scope: :form_profile, url: profiles_path, local: true do |f| %>
+    <table align="center">
+      <tr height='30px'>
+        <td align="right">Name:</td>
+        <td align="center"><%= @account.login %></td>
+      </tr>
+      <tr height='30px'>
+        <td align="right">Count of Victories:</td>
+        <td align="center"><%= @account.wins %></td>
+      </tr>
+      <tr height='30px'>
+        <td align="right">Count of Defeates:</td>
+        <td align="center"> <%= @account.defeates %></td>
+      </tr>
+      <tr height='30px'>
+        <td align="right" style='vertical-align: middle'>New Password:</td>
+        <td><%= f.password_field :password, class: 'input' %></td>
+      </tr>
+        <tr>
+          <td colspan='2' align='center'>
+            <div align='center' class='container'>
+              <%= @warning %>
+            </div>
+          </td>
+        </tr>
+    </table>
+    <ul class="block">
+      <li><%= link_to 'Back in menu', menu_path %></li>
+      <li><%= f.submit :submit, class: 'button', value: "Submit" %></li>
+    </ul>
+  <% end %>

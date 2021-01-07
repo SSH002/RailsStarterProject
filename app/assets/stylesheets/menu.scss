@@ -1,0 +1,14 @@
+// Place all the styles related to the menu controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.form-menu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.form-menu-button {
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}

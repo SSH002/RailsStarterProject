@@ -1,0 +1,22 @@
+  <div align="center">
+    <h3 align='center'>Sign Up</h3>
+    <%= form_with scope: :form_account, url: accounts_path, local: true do |f| %>
+      <table>
+        <div align="center" class="container">
+          <%= @warning %>
+        </div>
+        <tr>
+          <td align='right'>Name:</td>
+          <td><%= f.text_field :name, class: 'input' %></td>
+        </tr>
+        <tr>
+          <td align='right'>Password:</td>
+          <td><%= f.password_field :password, class: 'input' %></td>
+        </tr>
+        </table>
+      <ul class="block">
+        <li><%= link_to 'Cancel', menu_path %></li>
+        <li><%= f.submit :submit, class: 'button', value: "Submit" %></li>
+      </ul>
+    <% end %>
+  </div>
