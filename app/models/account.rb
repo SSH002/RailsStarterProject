@@ -69,7 +69,7 @@ class Account < ApplicationRecord
       self.defeates += 1
       save
 
-      'You loose! You got depressed.'
+      'You defeated! You got depressed.'
     else
       ''
     end
@@ -94,7 +94,7 @@ class Account < ApplicationRecord
   def watch_serial
     apply_stats(-10, 2, -15, 0)
 
-    'Watching a good series cheers up Valera.'
+    'Watching a good serial cheers up Valera.'
   end
 
   def drink_with_marginals

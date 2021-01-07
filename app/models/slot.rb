@@ -11,10 +11,10 @@ class Slot < ApplicationRecord
   def base_init
     self.account_id = 0
     self.name = ''
-    self.mana = 0
-    self.happiens = 0
-    self.money = 0
+    self.mana = 30
+    self.happiens = 5
     self.fatigue = 0
+    self.money = 5000
   end
 end
 
