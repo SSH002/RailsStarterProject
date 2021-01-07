@@ -17,6 +17,11 @@ Metrics/AbcSize:
 Metrics/MethodLength:
   Max: 20
 
+Layout/LineLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'config/routes.rb'
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'

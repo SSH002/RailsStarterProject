@@ -20,7 +20,7 @@ RSpec.describe Account, type: :model do
     it 'verivy password' do
       (account = build(:account)).init_stats
       account.new_password('1')
-      
+
       expect(account.check_password('1')).to eq true
     end
 
