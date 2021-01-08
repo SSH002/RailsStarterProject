@@ -1,11 +1,11 @@
 class ProfilesController < ApplicationController
   def index
     if session[:user_id].nil?
-      render plain: 'Access error', status: :unauthorized
+      render plain: 'Error! You not authorized.', status: :unauthorized
       return
     end
 
-    @warning = ''
+    @message = ''
     @account = Account.find_by(id: session[:user_id])
   end
 
@@ -13,10 +13,10 @@ class ProfilesController < ApplicationController
     @account = Account.find_by(id: session[:user_id])
 
     if params[:form_profile][:password] == ''
-      @warning = 'Invalid password!'
+      @message = 'Invalid password!'
     else
       @account.new_password(params[:form_profile][:password])
-      @warning = 'Password changed successfully!'
+      @message = 'Password changed successfully!'
     end
 
     render 'index'

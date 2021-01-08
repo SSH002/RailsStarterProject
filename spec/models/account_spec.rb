@@ -89,5 +89,18 @@ RSpec.describe Account, type: :model do
       (account = build(:account)).init_stats
       expect(account.sleep).to eq 'Valera slept well and is ready for new achievements.'
     end
+
+    it 'sing_bonus' do
+      (account = build(:account)).init_stats
+      account.mana = 80
+      account.money = 0
+      account.sing
+      expect(account.money).not_to eq 0
+    end
+
+    it 'sing_no_bonus' do
+      (account = build(:account)).init_stats
+      expect(account.sing).to eq "This time, no one appreciated Valera's singing."
+    end
   end
 end

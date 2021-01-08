@@ -3,15 +3,12 @@
     <%= form_with scope: :save_form, url: saves_path, local: true do |f| %>
       <table>
         <tr align="center">
-          <div style="width: 0px; height: 0px; opacity: 0;">
-            <%= button_to '', :disabled => true%>
-          </div>
           <td>Name save:</td>
           <td><%= f.text_field :name_save, class: 'input' %></td>
         </tr>
         <tr>
           <td colspan='2'>
-            <div align='center' class='container'><%= @warning %></div>
+            <div align='center' class='container'><%= @message %></div>
           </td>
         </tr>
       </table>

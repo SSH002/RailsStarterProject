@@ -102,7 +102,7 @@ class Account < ApplicationRecord
 
   def drink_with_marginals
     if self.money >= 1500
-      apply_stats(50, 2, -30, 1500)
+      apply_stats(50, 2, -30, -1500)
       'Valera sometimes like drink glass of vodka with his marginal-friends.'
     else
       "You don't have enough money have a drink with your marginal-friends."
@@ -110,7 +110,7 @@ class Account < ApplicationRecord
   end
 
   def sleep
-    apply_stats(50, 0, -70, 0)
+    apply_stats(-50, 0, -70, 0)
 
     'Valera slept well and is ready for new achievements.'
   end

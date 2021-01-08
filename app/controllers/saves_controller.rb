@@ -4,14 +4,14 @@ class SavesController < ApplicationController
   def new
     return unless session[:user_id].nil?
 
-    render plain: 'Access error', status: :unauthorized
+    render plain: 'Error! You not authorized.', status: :unauthorized
   end
 
   def create
     user = Account.find_by(id: session[:user_id])
 
     if params[:save_form][:name_save] == ''
-      @warning = 'Invalid Name save!'
+      @message = 'Invalid name save!'
       render 'new'
     else
       selected_save_name = params[:save_form][:name_save]

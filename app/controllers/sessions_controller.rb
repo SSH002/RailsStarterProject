@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
   def new
     unless session[:user_id].nil?
-      render plain: 'Access error', status: :unauthorized
+      render plain: 'Error! You not authorized.', status: :unauthorized
       return
     end
 
-    @warning = ''
+    @message = ''
   end
 
   def create
     user = Account.find_by(login: params[:form_account][:name])
 
-    if !user.nil? && user.check_password(params[:form_account][:passwd])
+    if !user.nil? && user.check_password(params[:form_account][:password])
       session[:user_id] = user.id
       redirect_to '/menu'
     else

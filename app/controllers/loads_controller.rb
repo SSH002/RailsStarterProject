@@ -3,7 +3,7 @@ class LoadsController < ApplicationController
 
   def new
     if session[:user_id].nil?
-      render plain: 'Access error', status: :unauthorized
+      render plain: 'Error! You not authorized.', status: :unauthorized
       return
     end
 

@@ -3,17 +3,13 @@ class GameController < ApplicationController
 
   def index
     if session[:user_id].nil?
-      render plain: 'Access error', status: :unauthorized
+      render plain: 'Error! You not authorized.', status: :unauthorized
       return
     end
 
     @account = account_get
     check_end_game
-    @warning = session[:last_warn] || ''
-  end
-
-  def rules
-    render plain: 'Access error', status: :unauthorized unless session[:user_id].nil?
+    @message = session[:message] || ''
   end
 
   def account_get
@@ -26,7 +22,7 @@ class GameController < ApplicationController
     if result == ''
       @is_lose = false
     else
-      session[:last_warn] = result
+      session[:message] = result
       @is_lose = true
     end
   end
@@ -34,37 +30,37 @@ class GameController < ApplicationController
   def start_new_game
     account_get.init_stats
 
-    session[:last_warn] = ''
+    session[:message] = ''
     redirect_to '/game'
   end
 
   def go_job
-    session[:last_warn] = account_get.go_job
+    session[:message] = account_get.go_job
     redirect_to '/game'
   end
 
   def rest
-    session[:last_warn] = account_get.rest
+    session[:message] = account_get.rest
     redirect_to '/game'
   end
 
   def watch_serial
-    session[:last_warn] = account_get.watch_serial
+    session[:message] = account_get.watch_serial
     redirect_to '/game'
   end
 
   def drink_with_marginals
-    session[:last_warn] = account_get.drink_with_marginals
+    session[:message] = account_get.drink_with_marginals
     redirect_to '/game'
   end
 
   def sleep
-    session[:last_warn] = account_get.sleep
+    session[:message] = account_get.sleep
     redirect_to '/game'
   end
 
   def sing
-    session[:last_warn] = account_get.sing
+    session[:message] = account_get.sing
     redirect_to '/game'
   end
 end
