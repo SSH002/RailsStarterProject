@@ -42,6 +42,11 @@ class Account < ApplicationRecord
     self.fatigue += fatigue
     self.money += money
 
+    fix_stats
+    save
+  end
+
+  def fix_stats
     if self.mana.negative?
       self.mana = 0
       self.happiens -= 1
@@ -55,8 +60,6 @@ class Account < ApplicationRecord
     self.fatigue = 0 if self.fatigue.negative?
 
     self.happiens = 10 if self.happiens > 10
-
-    save
   end
 
   def check_win_lose
@@ -69,7 +72,7 @@ class Account < ApplicationRecord
       self.defeates += 1
       save
 
-      'You defeated! You got depressed.'
+      'You defeated! Valera got depressed.'
     else
       ''
     end
@@ -100,9 +103,9 @@ class Account < ApplicationRecord
   def drink_with_marginals
     if self.money >= 1500
       apply_stats(50, 2, -30, 1500)
-      'Valera sometimes like to drink a glass of vodka with his marginal-friends.'
+      'Valera sometimes like drink glass of vodka with his marginal-friends.'
     else
-      "You don't have enough money to have a drink with your marginal-friends."
+      "You don't have enough money have a drink with your marginal-friends."
     end
   end
 

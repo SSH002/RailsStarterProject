@@ -27,13 +27,14 @@ RSpec.describe Account, type: :model do
     it 'victory_game' do
       (account = build(:account)).init_stats
       account.money = 50_000
-      expect(account.check_win_lose).to eq 'You win! Now Valera can buy notebook and work at home, drinking while working.'
+      expect(account.check_win_lose).to eq \
+        'You win! Now Valera can buy notebook and work at home, drinking while working.'
     end
 
     it 'defeat_game' do
       (account = build(:account)).init_stats
       account.happiens = -10
-      expect(account.check_win_lose).to eq 'You defeated! You got depressed.'
+      expect(account.check_win_lose).to eq 'You defeated! Valera got depressed.'
     end
 
     it 'continue_game' do
@@ -75,13 +76,13 @@ RSpec.describe Account, type: :model do
 
     it 'drink_with_marginls_success' do
       (account = build(:account)).init_stats
-      expect(account.drink_with_marginals).to eq 'Valera sometimes like to drink a glass of vodka with his marginal-friends.'
+      expect(account.drink_with_marginals).to eq 'Valera sometimes like drink glass of vodka with his marginal-friends.'
     end
 
     it 'drink_with_marginls_failed' do
       (account = build(:account)).init_stats
       account.money = 1499
-      expect(account.drink_with_marginals).to eq "You don't have enough money to have a drink with your marginal-friends."
+      expect(account.drink_with_marginals).to eq "You don't have enough money have a drink with your marginal-friends."
     end
 
     it 'sleep' do
