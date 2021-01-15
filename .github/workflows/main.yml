@@ -6,12 +6,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     services:
-      postgres:
-        image: postgres:12.3
+      mysql2:
+        image: mysql:8.0.19
         ports:
           - 5432:5432
         env:
-          POSTGRES_PASSWORD: postgres
+          MYSQL_PASSWORD: mysql
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby 2.7
@@ -22,9 +22,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.13.0
-      - name: Install PostgreSQL client
+      - name: Install MySQL client
         run: |
-          sudo apt-get -yqq install libpq-dev
+          sudo apt install mysql-client libmysqlclient-dev 
       - name: Bundle install
         run: |
           gem install bundler
