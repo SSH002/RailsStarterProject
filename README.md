@@ -1,38 +1,24 @@
-# Ruby Project
-## Valera Online(Rails Starter Project)
+# README
 
-![Unit Tests & Lint](https://github.com/SSH002/RailsStarterProject/workflows/Unit%20Tests%20&%20Lint/badge.svg)
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Install PostgreSQL
-```bash
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+Things you may want to cover:
 
-RELEASE=$(lsb_release -cs)
-echo "deb http://apt.postgresql.org/pub/repos/apt/ ${RELEASE}"-pgdg main | sudo tee  /etc/apt/sources.list.d/pgdg.list
+* Ruby version
 
-sudo apt update
-sudo apt -y install postgresql-11
+* System dependencies
 
-### Install
-```bash
-bundle install
+* Configuration
 
-## Create PostgreSQL user
-```bash
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+* Database creation
 
-## Create Database
-```bash
-sudo -u postgres createdb rails_starter_project_development
+* Database initialization
 
-## Run program
-```bash
-rails s
+* How to run the test suite
 
-## Run test
-```bash
-rspec
+* Services (job queues, cache servers, search engines, etc.)
 
-## Run rubocop
-```bash
-rubocop -a 
+* Deployment instructions
+
+* ...

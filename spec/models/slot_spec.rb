@@ -9,11 +9,11 @@ RSpec.describe Slot, type: :model do
     end
 
     it 'load_from_slot' do
-      (account = build(:account)).init_stats
-      account.money = 50_000
+      (user = build(:user)).init_stats
+      user.money = 50_000
 
       (slot = described_class.new).base_init
-      slot.set_from_account(account, 'saved_game')
+      slot.set_from_user(user, 'saved_game')
       expect(slot.money).to eq 50_000
     end
   end

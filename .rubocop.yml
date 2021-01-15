@@ -11,18 +11,19 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
   
-Metrics/AbcSize:
-  Max: 25
-
 Metrics/MethodLength:
   Max: 20
 
 Layout/LineLength:
   Exclude:
-    - 'spec/**/*_spec.rb'
-    - 'config/routes.rb'
+    - 'config/initializers/devise.rb'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
 
 Metrics/BlockLength:
   Exclude:
+    - 'config/environments/development.rb'
     - 'spec/**/*_spec.rb'
     - 'config/routes.rb'
