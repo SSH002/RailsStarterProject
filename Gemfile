@@ -3,8 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-# Use mysql2
-gem 'mysql2', '~>0.5.3'
+# Use PostgreSql
+gem 'pg', '>= 0.18', '< 2.0'
 # Use devise
 gem 'devise', '~>4.7.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
