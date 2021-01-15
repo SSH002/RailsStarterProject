@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :account do
-    login { 'ADSL' }
+  factory :user do
+    email { 'example@mail.com' }
     password { '1' }
     mana { 1 }
     happiens { 1 }
