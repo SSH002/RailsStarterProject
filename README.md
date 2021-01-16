@@ -1,24 +1,24 @@
-# README
+# Ruby Project
+## Valera Online(Rails Starter Project)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install PostgreSQL
+sudo apt install postgresql
+sudo gem install pg
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+sudo -u postgres createdb rails_starter_project_development
 
-Things you may want to cover:
+### Install
+```bash
+bundle install
 
-* Ruby version
+## Run program
+```bash
+rails s
 
-* System dependencies
+## Run test
+```bash
+bundle exec rspec
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run rubocop
+```bash
+rubocop
